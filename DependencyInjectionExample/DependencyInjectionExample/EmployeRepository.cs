@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DependencyInjectionExample
 {
-    public class EmployeRepository
+    public class EmployeRepository : IEmployeRepository
     {
         public List<Employe> SelectAllEmployes()
         {

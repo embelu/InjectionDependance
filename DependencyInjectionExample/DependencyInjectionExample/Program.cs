@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DependencyInjectionExample
 {
@@ -6,10 +7,21 @@ namespace DependencyInjectionExample
     {
         static void Main(string[] args)
         {
-            // DESCRIPTION
-            // Création de l'entité Employe
-            // Fort Couplage entre classes :
-            //    - la class EmployeBL dépend de la classe EmployeRepository (new EmployeRepository())
+
+
+
+            EmployeBL employeBL = new EmployeBL(new EmployeRepository());
+            List<Employe> ListEmployee = employeBL.GetAllEmployes();
+
+
+            foreach (Employe emp in ListEmployee)
+            {
+                Console.WriteLine("ID = {0}, Name = {1}, Department = {2}", emp.Id, emp.Nom, emp.Departement);
+            }
+
+
+
+
 
             Console.ReadKey();
         }
